@@ -1,3 +1,5 @@
+port=54505
+
 import requests
 
 keywords=[
@@ -33,23 +35,23 @@ class req:
 
 class TABLE(req):
     def __init__(self) -> None:
-        super().__init__(f"http://localhost:5000/database/{db}/{tb}")
+        super().__init__(f"http://localhost:{port}/database/{db}/{tb}")
 
 class DATABASE(req):
     def __init__(self) -> None:
-        super().__init__(f"http://localhost:5000/database/{db}")
+        super().__init__(f"http://localhost:{port}/database/{db}")
 
 class USER(req):
     def __init__(self, id:int|None=None) -> None:
-        super().__init__(f"http://localhost:5000/users/{id}")
+        super().__init__(f"http://localhost:{port}/users/{id}")
 
 class SET(req):
     def __init__(self, var) -> None:
-        super().__init__(f"http://localhost:5000/sys/{var}")
+        super().__init__(f"http://localhost:{port}/sys/{var}")
 
 class SYS(req):
     def __init__(self) -> None:
-        super().__init__("http://localhost:5000/sys/exec")
+        super().__init__(f"http://localhost:{port}/sys/exec")
 
 class USE:
     #TODO: ADD checks

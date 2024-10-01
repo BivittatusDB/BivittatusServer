@@ -1,6 +1,6 @@
 import flask, BivittatusDB as bdb, requests
 import requests.cookies
-
+PORT = 54505
 app=flask.Flask(__name__)
 
 ###################### USERS ######################
@@ -99,4 +99,4 @@ def EXEC():
     exec(flask.request.args.get('query'))
 
 if __name__=='__main__':
-    app.run()
+    app.run(port=PORT)
